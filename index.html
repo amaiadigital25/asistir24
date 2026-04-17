@@ -1,3 +1,6 @@
+# index.html actualizado
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,168 +17,142 @@
     }
 
     body {
-      background: #0d1117;
-      color: white;
-      line-height: 1.6;
+      background: linear-gradient(180deg, #ffffff 0%, #fdf2f8 50%, #dbeafe 100%);
+      color: #1f2937;
     }
 
     header {
-      background: linear-gradient(135deg, #101820, #1f2937);
-      padding: 80px 20px;
+      background: linear-gradient(135deg, #ec4899, #3b82f6);
+      color: white;
       text-align: center;
+      padding: 80px 20px;
     }
 
     header h1 {
       font-size: 3rem;
       margin-bottom: 20px;
-      color: #00d4ff;
     }
 
     .subtitulo {
       font-size: 1.4rem;
-      margin-bottom: 20px;
-      color: #d1d5db;
+      max-width: 800px;
+      margin: 0 auto 20px;
     }
 
     .descripcion {
-      max-width: 800px;
+      max-width: 850px;
       margin: auto;
       font-size: 1.1rem;
-      color: #cbd5e1;
+      line-height: 1.7;
     }
 
-    .botones-header {
-      margin-top: 35px;
+    .logo-banner {
+      margin: 40px auto 30px;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 15px;
+      gap: 25px;
       flex-wrap: wrap;
+      max-width: 950px;
+    }
+
+    .logo-banner img.logo {
+      width: 120px;
+      filter: drop-shadow(0 6px 15px rgba(0,0,0,0.3));
+    }
+
+    .logo-banner img.banner {
+      width: 100%;
+      max-width: 620px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .boton-principal,
-    .boton-emergencia,
     .boton-whatsapp-grande {
       display: inline-block;
-      padding: 15px 28px;
-      border-radius: 10px;
+      background: #ec4899;
+      color: white;
+      padding: 16px 30px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
+      margin-top: 20px;
     }
 
-    .boton-principal {
-      background: #00d4ff;
-      color: #000;
-    }
-
-    .boton-principal:hover {
-      background: #00b8df;
-    }
-
-    .boton-emergencia {
-      background: #dc2626;
-      color: white;
-      animation: pulse 1.5s infinite;
-    }
-
-    .boton-emergencia:hover {
-      background: #b91c1c;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+    .boton-principal:hover,
+    .boton-whatsapp-grande:hover {
+      background: #db2777;
+      transform: translateY(-2px);
     }
 
     section {
-      padding: 70px 20px;
       max-width: 1100px;
       margin: auto;
+      padding: 70px 20px;
     }
 
     section h2 {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
+      color: #3b82f6;
       margin-bottom: 40px;
-      color: #00d4ff;
     }
 
     .lista-servicios {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
 
     .servicio-item {
-      background: #161b22;
-      border: 1px solid #30363d;
-      padding: 25px;
-      border-radius: 14px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid #bfdbfe;
+      border-radius: 18px;
+      padding: 24px;
       text-align: center;
-      font-size: 1.05rem;
-      transition: 0.3s;
-    }
-
-    .servicio-item:hover {
-      transform: translateY(-5px);
-      border-color: #00d4ff;
+      box-shadow: 0 8px 20px rgba(59,130,246,0.08);
     }
 
     .porque-elegir ul {
-      max-width: 700px;
-      margin: auto;
       list-style: none;
+      max-width: 800px;
+      margin: auto;
     }
 
     .porque-elegir li {
-      background: #161b22;
-      margin-bottom: 12px;
+      background: white;
+      margin-bottom: 15px;
       padding: 18px;
-      border-left: 4px solid #00d4ff;
-      border-radius: 8px;
+      border-left: 5px solid #ec4899;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(236,72,153,0.08);
     }
 
     .porque-elegir p {
       text-align: center;
       max-width: 800px;
       margin: 35px auto;
-      color: #cbd5e1;
       font-size: 1.1rem;
     }
 
-    .asesoramiento {
-      text-align: center;
-      margin-top: 25px;
-    }
-
     .cta-final {
+      background: linear-gradient(135deg, #3b82f6, #ec4899);
+      color: white;
       text-align: center;
-      background: #111827;
-      border-top: 1px solid #30363d;
-      border-radius: 20px 20px 0 0;
+      border-radius: 30px 30px 0 0;
     }
 
     .cta-final h2 {
-      margin-bottom: 30px;
-    }
-
-    .boton-whatsapp-grande {
-      background: #25d366;
       color: white;
-      font-size: 1.2rem;
-      padding: 18px 38px;
-    }
-
-    .boton-whatsapp-grande:hover {
-      background: #1ebe5d;
     }
 
     footer {
+      background: #ffffff;
       text-align: center;
       padding: 20px;
-      background: #0b0f14;
-      color: #9ca3af;
+      color: #6b7280;
     }
   </style>
 </head>
@@ -189,22 +166,21 @@
     </p>
 
     <p class="descripcion">
-      Asistir24 combina seguros vehiculares y asistencia 24hs para que tengas todo en un solo servicio.<br>
+      Asistir24 combina seguros vehiculares y asistencia 24hs para que tengas todo en un solo servicio.
       Nos encargamos de que nunca te quedes solo ante un imprevisto.
     </p>
 
-    <div class="botones-header">
-      <a href="https://wa.me/543487210379" class="boton-principal">
-        Quiero asesoramiento
-      </a>
-
-      <a href="tel:+543487210379" class="boton-emergencia">
-        Emergencia 24hs
-      </a>
+    <div class="logo-banner">
+      <img src="logo.png" alt="Logo Asistir24" class="logo">
+      <img src="banner.jpg" alt="Banner Asistir24" class="banner">
     </div>
+
+    <a href="https://wa.me/541126433243" class="boton-principal">
+      Quiero asesoramiento
+    </a>
   </header>
 
-  <section id="servicios">
+  <section>
     <h2>Nuestros servicios</h2>
 
     <div class="lista-servicios">
@@ -230,12 +206,11 @@
     </ul>
 
     <p>
-      Trabajamos con empresas y flotas ofreciendo coberturas personalizadas,
-      reducción de costos y asistencia constante.
+      Trabajamos con empresas y flotas ofreciendo coberturas personalizadas, reducción de costos y asistencia constante.
     </p>
 
-    <div class="asesoramiento">
-      <a href="https://wa.me/543487210379" class="boton-principal">
+    <div style="text-align:center;">
+      <a href="https://wa.me/541126433243" class="boton-principal">
         Quiero asesoramiento
       </a>
     </div>
@@ -244,13 +219,13 @@
   <section class="cta-final">
     <h2>¿Querés asegurar tu vehículo o mejorar tu cobertura?</h2>
 
-    <a href="https://wa.me/543487210379" class="boton-whatsapp-grande">
+    <a href="https://wa.me/541126433243" class="boton-whatsapp-grande">
       Hablar por WhatsApp
     </a>
   </section>
 
   <footer>
-    <p>© 2026 Asistir24 - Seguros y asistencia vehicular 24hs</p>
+    © 2026 Asistir24 - Seguros y asistencia vehicular 24hs producto de amaiadigital
   </footer>
 
 </body>
