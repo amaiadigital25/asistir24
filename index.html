@@ -4,68 +4,254 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asistir24</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0d1117;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #101820, #1f2937);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00d4ff;
+    }
+
+    .subtitulo {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #d1d5db;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    .botones-header {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .boton-principal,
+    .boton-emergencia,
+    .boton-whatsapp-grande {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .boton-principal {
+      background: #00d4ff;
+      color: #000;
+    }
+
+    .boton-principal:hover {
+      background: #00b8df;
+    }
+
+    .boton-emergencia {
+      background: #dc2626;
+      color: white;
+      animation: pulse 1.5s infinite;
+    }
+
+    .boton-emergencia:hover {
+      background: #b91c1c;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #00d4ff;
+    }
+
+    .lista-servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .servicio-item {
+      background: #161b22;
+      border: 1px solid #30363d;
+      padding: 25px;
+      border-radius: 14px;
+      text-align: center;
+      font-size: 1.05rem;
+      transition: 0.3s;
+    }
+
+    .servicio-item:hover {
+      transform: translateY(-5px);
+      border-color: #00d4ff;
+    }
+
+    .porque-elegir ul {
+      max-width: 700px;
+      margin: auto;
+      list-style: none;
+    }
+
+    .porque-elegir li {
+      background: #161b22;
+      margin-bottom: 12px;
+      padding: 18px;
+      border-left: 4px solid #00d4ff;
+      border-radius: 8px;
+    }
+
+    .porque-elegir p {
+      text-align: center;
+      max-width: 800px;
+      margin: 35px auto;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+
+    .asesoramiento {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .cta-final {
+      text-align: center;
+      background: #111827;
+      border-top: 1px solid #30363d;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .cta-final h2 {
+      margin-bottom: 30px;
+    }
+
+    .boton-whatsapp-grande {
+      background: #25d366;
+      color: white;
+      font-size: 1.2rem;
+      padding: 18px 38px;
+    }
+
+    .boton-whatsapp-grande:hover {
+      background: #1ebe5d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0b0f14;
+      color: #9ca3af;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo-box">
-      <img src="logo-24.png" alt="Asistir24">
-      <div>
-        <h1>Asistir24</h1>
-        <p>Tu tranquilidad, siempre.</p>
-      </div>
-    </div>
 
-    <a class="btn whatsapp-top" href="https://wa.me/5491126433243?text=Hola,%20necesito%20asistencia%20urgente" target="_blank">
-      WhatsApp
-    </a>
+  <header>
+    <h1>Seguros + Asistencia 24hs en un solo lugar</h1>
+
+    <p class="subtitulo">
+      Asegurá tu vehículo y accedé a asistencia inmediata cuando la necesites.
+    </p>
+
+    <p class="descripcion">
+      Asistir24 combina seguros vehiculares y asistencia 24hs para que tengas todo en un solo servicio.<br>
+      Nos encargamos de que nunca te quedes solo ante un imprevisto.
+    </p>
+
+    <div class="botones-header">
+      <a href="https://wa.me/543487210379" class="boton-principal">
+        Quiero asesoramiento
+      </a>
+
+      <a href="tel:+543487210379" class="boton-emergencia">
+        Emergencia 24hs
+      </a>
+    </div>
   </header>
 
-  <section class="banner">
-    <img src="banner-24.png" alt="Banner">
-    <div class="overlay">
-      <h2>Pedí ayuda en segundos</h2>
-      <p>Sin registro ni contraseña. Asistencia inmediata por emergencia o WhatsApp.</p>
+  <section id="servicios">
+    <h2>Nuestros servicios</h2>
+
+    <div class="lista-servicios">
+      <div class="servicio-item">Seguros vehiculares personalizados</div>
+      <div class="servicio-item">Asistencia mecánica 24 hs</div>
+      <div class="servicio-item">Traslados y grúas</div>
+      <div class="servicio-item">Planes para empresas y flotas</div>
+      <div class="servicio-item">Coberturas a medida</div>
+      <div class="servicio-item">Gestión por choques o roturas</div>
+      <div class="servicio-item">Servicio de guarda vehicular</div>
     </div>
   </section>
 
-  <main>
-    <section class="content">
-      <div class="left">
-        <h3>Elegí cómo querés contactarnos</h3>
-        <p>Presioná el botón de emergencia para llamar rápidamente o abrí WhatsApp para hablar con nosotros.</p>
+  <section class="porque-elegir">
+    <h2>¿Por qué elegir Asistir24?</h2>
 
-        <div class="buttons">
-          <a class="btn emergency" href="tel:911">🚨 Emergencia</a>
-          <a class="btn whatsapp" href="https://wa.me/5491126433243?text=Hola,%20necesito%20asistencia%20urgente" target="_blank">💬 Abrir WhatsApp</a>
-        </div>
-      </div>
+    <ul>
+      <li>Todo en un solo lugar</li>
+      <li>Atención rápida y directa</li>
+      <li>Red de prestadores</li>
+      <li>Sin vueltas ni burocracia</li>
+      <li>Asistencia real cuando la necesitás</li>
+    </ul>
 
-      <div class="right">
-        <h3>¿Cómo funciona?</h3>
+    <p>
+      Trabajamos con empresas y flotas ofreciendo coberturas personalizadas,
+      reducción de costos y asistencia constante.
+    </p>
 
-        <div class="step">
-          <span>1</span>
-          <p>Presioná el botón de emergencia si necesitás ayuda inmediata.</p>
-        </div>
+    <div class="asesoramiento">
+      <a href="https://wa.me/543487210379" class="boton-principal">
+        Quiero asesoramiento
+      </a>
+    </div>
+  </section>
 
-        <div class="step">
-          <span>2</span>
-          <p>O escribinos por WhatsApp para recibir atención personalizada.</p>
-        </div>
+  <section class="cta-final">
+    <h2>¿Querés asegurar tu vehículo o mejorar tu cobertura?</h2>
 
-        <div class="step">
-          <span>3</span>
-          <p>Te conectamos rápidamente con el servicio que necesitás.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+    <a href="https://wa.me/543487210379" class="boton-whatsapp-grande">
+      Hablar por WhatsApp
+    </a>
+  </section>
 
   <footer>
-    © 2026 Asistir24 - Atención inmediata las 24 horas
+    <p>© 2026 Asistir24 - Seguros y asistencia vehicular 24hs</p>
   </footer>
 
-  <script src="server.js"></script>
 </body>
 </html>
