@@ -1,205 +1,380 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asistir24</title>
+  <title>Asistir24 - Seguros + Asistencia 24hs</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      background: linear-gradient(180deg, #ffffff 0%, #fdf2f8 50%, #dbeafe 100%);
-      color: #1f2937;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #ec4899, #3b82f6);
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
+      background: #fff;
+      box-shadow: 0 2px 15px rgba(255, 105, 180, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    header h1 {
-      font-size: 3rem;
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff4da6;
+    }
+
+    .logo span {
+      color: #6ab8ff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #ff4da6;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      padding: 80px 8%;
+      background: linear-gradient(135deg,#fff 0%,#ffe7f4 50%,#eef7ff 100%);
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 320px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.4rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .hero-text h1 span {
+      color: #ff4da6;
+    }
+
+    .hero-text h2 {
+      font-size: 1.4rem;
+      color: #6ab8ff;
       margin-bottom: 20px;
     }
 
-    .subtitulo {
-      font-size: 1.4rem;
-      max-width: 800px;
-      margin: 0 auto 20px;
-    }
-
-    .descripcion {
-      max-width: 850px;
-      margin: auto;
+    .hero-text p {
       font-size: 1.1rem;
-      line-height: 1.7;
+      color: #555;
+      margin-bottom: 18px;
+      max-width: 650px;
     }
 
-    .logo-banner {
-      margin: 40px auto 30px;
+    .hero-buttons {
+      margin-top: 30px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 25px;
+      gap: 15px;
       flex-wrap: wrap;
-      max-width: 950px;
     }
 
-    .logo-banner img.logo {
-      width: 120px;
-      filter: drop-shadow(0 6px 15px rgba(0,0,0,0.3));
-    }
-
-    .logo-banner img.banner {
-      width: 100%;
-      max-width: 620px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    .boton-principal,
-    .boton-whatsapp-grande {
-      display: inline-block;
-      background: #ec4899;
-      color: white;
-      padding: 16px 30px;
-      border-radius: 12px;
+    .btn {
+      padding: 15px 28px;
+      border-radius: 14px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
-      margin-top: 20px;
+      transition: .3s;
+      display: inline-block;
     }
 
-    .boton-principal:hover,
-    .boton-whatsapp-grande:hover {
-      background: #db2777;
-      transform: translateY(-2px);
+    .btn-primary {
+      background: #ff4da6;
+      color: white;
+      box-shadow: 0 10px 20px rgba(255,77,166,.25);
+    }
+
+    .btn-primary:hover {
+      background: #ff2e93;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 2px solid #6ab8ff;
+      color: #6ab8ff;
+    }
+
+    .btn-secondary:hover {
+      background: #6ab8ff;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(106,184,255,.25);
     }
 
     section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 70px 20px;
+      padding: 80px 8%;
     }
 
-    section h2 {
+    .title {
       text-align: center;
-      font-size: 2.3rem;
-      color: #3b82f6;
-      margin-bottom: 40px;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #333;
     }
 
-    .lista-servicios {
+    .title span {
+      color: #ff4da6;
+    }
+
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+      border-top: 5px solid #ff4da6;
+      transition: .3s;
+    }
+
+    .card:nth-child(even) {
+      border-top-color: #6ab8ff;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px rgba(255,77,166,.12);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .card p,
+    .card li {
+      color: #555;
+    }
+
+    .card ul {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .empresas {
+      background: #fdf7fb;
+      border-radius: 30px;
+      padding: 60px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(255,77,166,.08);
+    }
+
+    .empresas p {
+      max-width: 850px;
+      margin: auto;
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .why {
+      background: linear-gradient(135deg,#ffe7f4,#eef7ff);
+      border-radius: 30px;
+      padding: 60px;
+    }
+
+    .why ul {
+      max-width: 800px;
+      margin: auto;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
       gap: 20px;
     }
 
-    .servicio-item {
-      background: rgba(255,255,255,0.85);
-      border: 1px solid #bfdbfe;
-      border-radius: 18px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(59,130,246,0.08);
-    }
-
-    .porque-elegir ul {
-      list-style: none;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .porque-elegir li {
+    .why li {
       background: white;
-      margin-bottom: 15px;
-      padding: 18px;
-      border-left: 5px solid #ec4899;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(236,72,153,0.08);
+      padding: 20px;
+      border-radius: 18px;
+      box-shadow: 0 10px 20px rgba(0,0,0,.06);
+      font-weight: 600;
+      color: #444;
     }
 
-    .porque-elegir p {
-      text-align: center;
-      max-width: 800px;
-      margin: 35px auto;
-      font-size: 1.1rem;
-    }
-
-    .cta-final {
-      background: linear-gradient(135deg, #3b82f6, #ec4899);
+    .final-cta {
+      margin: 80px 8%;
+      background: linear-gradient(135deg,#ff4da6,#6ab8ff);
       color: white;
       text-align: center;
-      border-radius: 30px 30px 0 0;
+      padding: 70px 30px;
+      border-radius: 35px;
+      box-shadow: 0 20px 40px rgba(106,184,255,.25);
     }
 
-    .cta-final h2 {
-      color: white;
+    .final-cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .final-cta .btn {
+      background: white;
+      color: #ff4da6;
+      font-size: 1.15rem;
+      padding: 18px 40px;
     }
 
     footer {
-      background: #ffffff;
       text-align: center;
-      padding: 20px;
-      color: #6b7280;
+      padding: 35px;
+      color: #777;
+      border-top: 1px solid #eee;
+      background: #fafafa;
+    }
+
+    @media(max-width:768px){
+      header {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .empresas,
+      .why {
+        padding: 35px 25px;
+      }
+
+      .final-cta h2 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Seguros + Asistencia 24hs en un solo lugar</h1>
+<header>
+  <div class="logo">Asistir<span>24</span></div>
 
-    <p class="subtitulo">
-      Asegurá tu vehículo y accedé a asistencia inmediata cuando la necesites.
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#empresas">Empresas</a></li>
+      <li><a href="#porque">¿Por qué elegirnos?</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-text">
+    <h1>Seguros + <span>Asistencia 24hs</span> en un solo lugar</h1>
+
+    <h2>Asegurá tu vehículo y accedé a asistencia inmediata cuando la necesites.</h2>
+
+    <p>
+      Asistir24 combina seguros vehiculares y asistencia 24hs para que tengas todo en un solo servicio.
     </p>
 
-    <div class="logo-banner" style="display:flex; align-items:flex-start; justify-content:center; gap:30px; max-width:1000px; margin:40px auto 30px; flex-wrap:wrap;">
-      <div style="flex:0 0 140px; display:flex; justify-content:flex-start;">
-        <img src="logo.png" alt="Logo Asistir24" class="logo" style="width:120px;">
-      </div>
-
-      <div style="flex:1; min-width:280px; text-align:center;">
-        <img src="banner.jpg" alt="Banner Asistir24" class="banner" style="max-width:650px; width:100%; border-radius:20px;">
-      </div>
-    </div>
-
-    <p class="descripcion">
-      Asistir24 combina seguros vehiculares y asistencia 24hs para que tengas todo en un solo servicio.
+    <p>
       Nos encargamos de que nunca te quedes solo ante un imprevisto.
     </p>
 
-    <a href="https://wa.me/541126433243" class="boton-principal">
-      Quiero asesoramiento
-    </a>
-  </header>
-
-  <section>
-    <h2>Nuestros servicios</h2>
-
-    <div class="lista-servicios">
-      <div class="servicio-item">Seguros vehiculares personalizados</div>
-      <div class="servicio-item">Asistencia mecánica 24 hs</div>
-      <div class="servicio-item">Traslados y grúas</div>
-      <div class="servicio-item">Planes para empresas y flotas</div>
-      <div class="servicio-item">Coberturas a medida</div>
-      <div class="servicio-item">Gestión por choques o roturas</div>
-      <div class="servicio-item">Servicio de guarda vehicular</div>
+    <div class="hero-buttons">
+      <a href="#servicios" class="btn btn-primary">Ver servicios</a>
+      <a href="https://wa.me/5491126433243" class="btn btn-secondary">Quiero asesoramiento</a>
     </div>
-  </section>
+  </div>
 
-  <section class="porque-elegir">
-    <h2>¿Por qué elegir Asistir24?</h2>
+  <div class="hero-image">
+    <img src="img/seguro-asistencia.jpg" alt="Seguro y asistencia vehicular">
+  </div>
+</section>
 
+<section id="servicios">
+  <h2 class="title">Nuestros <span>servicios</span></h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Servicios disponibles</h3>
+      <ul>
+        <li>Seguros vehiculares personalizados</li>
+        <li>Asistencia mecánica 24 hs</li>
+        <li>Traslados y grúas</li>
+        <li>Planes para empresas y flotas</li>
+        <li>Coberturas a medida</li>
+        <li>Gestión por choques o roturas</li>
+        <li>Servicio de guarda vehicular</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="porque">
+  <h2 class="title">¿Por qué elegir <span>Asistir24</span>?</h2>
+
+  <div class="why">
     <ul>
       <li>Todo en un solo lugar</li>
       <li>Atención rápida y directa</li>
@@ -207,30 +382,31 @@
       <li>Sin vueltas ni burocracia</li>
       <li>Asistencia real cuando la necesitás</li>
     </ul>
+  </div>
+</section>
 
+<section id="empresas">
+  <h2 class="title">Soluciones para <span>Empresas</span></h2>
+
+  <div class="empresas">
     <p>
-      Trabajamos con empresas y flotas ofreciendo coberturas personalizadas, reducción de costos y asistencia constante.
+      Trabajamos con empresas y flotas ofreciendo coberturas personalizadas,
+      reducción de costos y asistencia constante.
     </p>
 
-    <div style="text-align:center;">
-      <a href="https://wa.me/541126433243" class="boton-principal">
-        Quiero asesoramiento
-      </a>
-    </div>
-  </section>
+    <a href="https://wa.me/5491126433243" class="btn btn-primary">Quiero asesoramiento</a>
+  </div>
+</section>
 
-  <section class="cta-final">
-    <h2>¿Querés asegurar tu vehículo o mejorar tu cobertura?</h2>
+<div class="final-cta">
+  <h2>¿Querés asegurar tu vehículo o mejorar tu cobertura?</h2>
 
-    <a href="https://wa.me/541126433243" class="boton-whatsapp-grande">
-      Hablar por WhatsApp
-    </a>
-  </section>
+  <a href="https://wa.me/5491126433243" class="btn">Hablar por WhatsApp</a>
+</div>
 
-  <footer>
-    © 2026 Asistir24 - Seguros y asistencia vehicular 24hs
-			producto de amaia digital
-  </footer>
+<footer>
+  <p>© 2026 Asistir24 - Seguros y asistencia vehicular</p>
+</footer>
 
 </body>
 </html>
